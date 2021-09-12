@@ -1,0 +1,38 @@
+{% extends 'license/index.html'%}
+{% block content %}
+<div class="reminder">
+    <form method="POST">
+        <fieldset>
+          <legend>Reminders</legend>
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-primary" >Submit</button>
+          <!-- <a href="/license">Refresh to see added data </a> -->
+        </fieldset>
+      </form>
+</div>
+<!-- <p></p>
+<p></p> -->
+ <!-- <div class="table">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Software license</th>
+            <th scope="col">License date</th>
+            <th scope="col">End of License Date</th>
+          </tr>
+        </thead>
+        <tbody>
+            {%for license in license_list%}
+            <tr>
+             <th scope="row">{{ forloop.counter }}</th>
+             <td>{{ license.license_name }}</td>
+             <td>{{ license.license_date }}</td>
+             <td>{{ license.license_date }}
+            </tr>
+          {% endfor %}
+          </tbody>
+          </table>
+ </div>  -->
+{% endblock content %}
